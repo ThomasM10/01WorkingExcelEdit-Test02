@@ -7,7 +7,7 @@ var html = "";
 
 global.document = new JSDOM(html).window.document;
 
-// I guess this may be the area where the object sent from the frontend could go.  Example beneath.  
+// I guess this may be the area where the object sent from the frontend could go.  Example beneath.
 var storedSendingObject = {}
 
 
@@ -18,7 +18,7 @@ const reader = require('xlsx')
 
 const file = reader.readFile('../project3Temp.xlsx')
 
-let data = []
+var storedReceivingObject = []
 
 const sheets = file.SheetNames
 
@@ -27,11 +27,28 @@ for(let i = 0; i < sheets.length; i++)
 const temp = reader.utils.sheet_to_json(
 file.Sheets[file.SheetNames[i]])
 temp.forEach((res) => {
-data.push(res)
+    storedReceivingObject.push(res)
 })
 }
 
-console.log(data)
+console.log(storedReceivingObject)
+
+
+var storedSendingBox1 = "Hello, I want to go to the backend";
+var storedSendingBox2 = "I also want to go to the backend";
+var storedSendingBox3 = "I wish I could go to the backend too";
+
+
+var storedSendingObject = {
+    1:storedSendingBox1,
+    2:storedSendingBox2,
+    3:storedSendingBox3
+}
+
+
+
+//Attempting to convert the object to JSON
+var convertedStoredSendingObject = JSON.stringify(storedSendingObject);
 
 let XLSX = require('xlsx')
 
@@ -42,10 +59,9 @@ let ws = workbook.Sheets[sheetName];
 
 // here it overwrites the worksheet.  Where it says data,
 // I instead need this to be the object with the name storedSendingObject
-workbook.Sheets[sheetName] = XLSX.utils.json_to_sheet(data);
+workbook.Sheets[sheetName] = XLSX.utils.json_to_sheet(convertedStoredSendingObject);
 XLSX.writeFile(workbook, excelFile);
 
-// });
 
 };
 
