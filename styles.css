@@ -1,0 +1,36 @@
+.sender {
+    width: 150px;
+    height: 150px;
+}
+
+.receiver {
+    width: 150px;
+    height: 150px;
+}
+
+
+.recievingContainer {
+display: flex;
+flex-direction: column;
+margin-right: 70px;
+}
+
+.sendingContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    margin-left: 300px;
+    margin-top: 120px;
+}
+
+
+.buttonsContainer{
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+}
