@@ -10,25 +10,31 @@
 </head>
 <body>
 
-        <div>
-                
-                <button class="btnOverWriteAccess" onclick="btnOverWrite()">Overwrite</button>
-            </div>
+
+    
 
 
+    <div class="mainContainer">
+    <div class="buttonsContainer">
+<button class="receiveFromBackendBtn" onclick="receiveFromBackendBtn()">Receive From Backend</button>
+<button class="sendToBackendBtn" onclick="sendToBackendBtn()">Send To Backend</button>
 
-        </div>  <!-- Main Receiving Section End -->
+<button class="btnOverWriteAccess" onclick="btnOverWrite()">Overwrite Excel</button>
+    </div>
 
+        <div class="recievingContainer">Recievers
+            <textarea class="receiver receiver1"></textarea>
+            <textarea class="receiver receiver2"></textarea>
+            <textarea class="receiver receiver3"></textarea>
+        </div>
 
-
-
+        <div class="sendingContainer"> Senders
+            <textarea class="sender sender1"></textarea>
+            <textarea class="sender sender2"></textarea>
+            <textarea class="sender sender3"></textarea>
+        </div>
 
     </div>
-    
-    
-    
+
     </body>
-    
-    
-    
     <script src="./Frontend/buttonPage.js"></script>
